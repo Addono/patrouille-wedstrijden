@@ -4,18 +4,10 @@
  * @date 29-1-2017
  */
 ?>
-
-            <footer class="footer">
-                <div class="container">
-                    <div class="copyright">
-                       <?=lang('application_name').' '.lang('application_version')?> &copy; <?=lang('copyright')?>
-                    </div>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
-</div>
-
 </body>
 
     <!--   Core JS Files   -->

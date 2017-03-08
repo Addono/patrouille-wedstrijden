@@ -13,7 +13,6 @@ class PageNotFoundPage extends PageFrame
     {
         return [
             '../../error/pageNotFound',
-            'intersection',
         ];
     }
 

@@ -8,3 +8,4 @@
     <h1><?=lang('logout_header_title')?></h1>
     <h4><?=lang('logout_header_body')?></h4>
     <a href="<?php echo site_url()?>" class="btn btn-simple btn-primary btn-lg btn-background-white"><?=lang('logout_homepage')?></a>
+</div>

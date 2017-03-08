@@ -5,5 +5,6 @@
  */
 ?>
 <div class="col-md-6 vmargin">
-    <h1><?=lang('default_page_header_title')?></h1>
-    <h4><?=lang('default_page_header_body')?></h4>
+    <h1>Patrioulle wedstrijden</h1>
+    <h4>Intro tekst hier!</h4>
+</div>

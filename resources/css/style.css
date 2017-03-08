@@ -55,3 +55,7 @@ body {
 .input-group span.input-group-addon {
     padding-top: 0px;
 }
+
+.card .header-primary {
+    background: linear-gradient(60deg, #fabd86, #e08d5a);
+}

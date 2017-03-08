@@ -13,7 +13,6 @@ class DefaultPage extends PageFrame
     {
         return [
             'default-header',
-            'intersection',
         ];
     }
 
