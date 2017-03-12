@@ -3,12 +3,21 @@
  * @author Adriaan Knapen <a.d.knapen@protonmail.com>
  * @date 7-3-2017
  */
+
+function displayScore($score) {
+    if ($score === 'unknown') {
+        return '-';
+    } else {
+        return $score;
+    }
+}
+
 ?>
 <div class="col-md-12 vmargin col-md-offset-0">
     <div class="container">
         <div class="card card-signup">
             <div class="header header-primary text-center">
-                <h4>Results week 1</h4>
+                <h4>Scores week <?=$week?></h4>
             </div>
             <p class="text-divider"></p>
             <div class="content">
@@ -16,21 +25,47 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th><?=lang('transactions_table_header_author')?></th>
-                            <th><?=lang('transactions_table_header_subject')?></th>
-                            <th><?=lang('transactions_table_header_amount')?></th>
-                            <th><?=lang('transactions_table_header_delta')?></th>
-                            <th><?=lang('transactions_table_header_time')?></th>
+                            <th>Spelgebied</th>
+                            <th>Onderwerp</th>
+                            <th>Factor</th>
+                            <th>H</th>
+                            <th>E</th>
+                            <th>K</th>
+                            <th>U</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($transactions as $t) { ?>
+                        <?php foreach ($data as $count => $d) { ?>
                             <tr>
-                                <td><?=$t[$fields['author']]?></td>
-                                <td><?=$t[$fields['subject']]?></td>
-                                <td><?=$t[$fields['amount']]?></td>
-                                <td><?=($d=$t[$fields['delta']])>0?'+'.$d:$d?></td>
-                                <td><?=$t[$fields['time']]?></td>
+                                <td><?=$d[Rating::FIELD_AREA]?></td>
+                                <td>
+                                    <?=$d[Rating::FIELD_SUBJECT]?>
+                                    <button class="btn btn-xs btn-simple" data-toggle="modal" data-target="#<?=$count?>">
+                                        <i class="fa fa-question"></i>
+                                    </button>
+                                    <!-- Sart Modal -->
+                                    <div class="modal fade" id="<?=$count?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"><?=$d[Rating::FIELD_SUBJECT]?></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <?=$d[Rating::FIELD_DESCRIPTION]?>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Sluiten</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  End Modal -->
+                                </td>
+                                <td><?=displayScore($d[Rating::FIELD_FACTOR])?></td>
+                                <td><?=displayScore($d[Rating::FIELD_HERTEN])?></td>
+                                <td><?=displayScore($d[Rating::FIELD_EKSTERS])?></td>
+                                <td><?=displayScore($d[Rating::FIELD_KEMPHANEN])?></td>
+                                <td><?=displayScore($d[Rating::FIELD_UILEN])?></td>
                             </tr>
                         <?php } ?>
                         </tbody>

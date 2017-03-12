@@ -34,6 +34,11 @@ class Week1Page extends PageFrame
      */
     public function beforeView()
     {
+        $week = 1;
+        $this->setData('week', $week);
+
+        $data = $this->ci->Rating->getWeek($week);
+        $this->setData('data', $data);
     }
 
     /**
@@ -63,7 +68,9 @@ class Week1Page extends PageFrame
      */
     protected function getModels()
     {
-        return [];
+        return [
+            Rating::class,
+        ];
     }
 
     /**

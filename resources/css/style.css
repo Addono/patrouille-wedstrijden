@@ -59,3 +59,8 @@ body {
 .card .header-primary {
     background: linear-gradient(60deg, #fabd86, #e08d5a);
 }
+
+td {
+    vertical-align: middle !important;
+    color: #545454 !important;
+}
