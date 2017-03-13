@@ -12,6 +12,29 @@ function displayScore($score) {
     }
 }
 
+$totalScores = [
+        'total' => 0,
+        'herten' => 0,
+        'eksters' => 0,
+        'kemphanen' => 0,
+        'uilen' => 0,
+];
+foreach ($data as $d) {
+    $factor = $d[Rating::FIELD_FACTOR];
+    $score = [
+            'total' => 1,
+            'herten' => $d[Rating::FIELD_HERTEN],
+            'eksters' => $d[Rating::FIELD_EKSTERS],
+            'kemphanen' => $d[Rating::FIELD_KEMPHANEN],
+            'uilen' => $d[Rating::FIELD_UILEN],
+    ];
+
+    foreach ($score as $key => $e) {
+        if ($e!=='unknown') {
+            $totalScores[$key] += $factor * $e;
+        }
+    }
+}
 ?>
 <div class="col-md-12 vmargin col-md-offset-0">
     <div class="container">
@@ -68,6 +91,15 @@ function displayScore($score) {
                                 <td><?=displayScore($d[Rating::FIELD_UILEN])?></td>
                             </tr>
                         <?php } ?>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><?=$totalScores['total']?></td>
+                                <td><?=$totalScores['herten']?></td>
+                                <td><?=$totalScores['eksters']?></td>
+                                <td><?=$totalScores['kemphanen']?></td>
+                                <td><?=$totalScores['uilen']?></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

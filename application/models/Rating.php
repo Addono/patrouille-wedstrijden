@@ -128,19 +128,6 @@ class Rating extends ModelFrame
         );
         $this->add(
             'Identiteit',
-            'Uniform',
-            '<b>Uitgedrukt in totaal aantal missende onderdelen gedeeld door het aantal aanwezige patrioulleleden.</b>
-             <p>Exact 0 (er ontbreekt niks): 10</p>
-             <p>Tussen de 0 en 1: 8</p>
-             <p>Tussen de 1 en 2: 6</p>
-             <p>Tussen de 2 en 3: 4</p>
-             <p>Tussen de 3 en 4: 2</p>
-             <p>Tussen de 4 en 5: 0</p>',
-            1,
-            10
-        );
-        $this->add(
-            'Identiteit',
             'Ploegoptreden',
             '<b>10 punten, min 2 voor elk van de volgende onderdelen die niet gehaald worden</b>
             <p>Iedereen staat stil</p>
