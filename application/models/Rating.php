@@ -89,7 +89,7 @@ class Rating extends ModelFrame
             'Samenwerking',
             '<p>Niet iedereen heeft een taak: 3</p>
              <p>De meeste patrouilleleden hebben een taak: 6</p>
-             <p>Alle patriouilleleden hebben een taak: 10</p>',
+             <p>Alle patrouilleleden hebben een taak: 10</p>',
             1,
             5
         );
@@ -107,7 +107,7 @@ class Rating extends ModelFrame
             'Inzet',
             '<p>Geen van de patrouilleleden zet zich in: 3</p>
              <p>De meeste patrouilleleden zetten zich in: 6</p>
-             <p>Alle patriouilleleden zetten zich in: 10</p>',
+             <p>Alle patrouilleleden zetten zich in: 10</p>',
             1,
             10
         );
@@ -116,7 +116,7 @@ class Rating extends ModelFrame
         $this->add(
             'Identiteit',
             'Uniform',
-            '<b>Uitgedrukt in totaal aantal missende onderdelen gedeeld door het aantal aanwezige patrioulleleden.</b>
+            '<b>Uitgedrukt in totaal aantal missende onderdelen gedeeld door het aantal aanwezige patrouilleleden.</b>
              <p>Exact 0 (er ontbreekt niks): 10</p>
              <p>Tussen de 0 en 1: 8</p>
              <p>Tussen de 1 en 2: 6</p>
