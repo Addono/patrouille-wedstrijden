@@ -20,11 +20,6 @@ class LogoutPage extends PageFrame
         ];
     }
 
-    public function isVisible()
-    {
-        return $this->hasAccess();
-    }
-
     protected function getFormValidationRules()
     {
         return false;

@@ -16,11 +16,6 @@ class InsufficientRightsPage extends PageFrame
         ];
     }
 
-    public function isVisible()
-    {
-        return false;
-    }
-
     public function hasAccess()
     {
         return true;

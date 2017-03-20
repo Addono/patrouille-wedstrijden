@@ -8,11 +8,21 @@ class Menu extends MenuFrame
 {
 
     protected function menuElements() {
-        return [
-            new MenuPage('Week 1', Week1Page::class),
-            new MenuPage(lang('menu_admin'), AdminPage::class, 'fa fa-dashboard fa-fw'),
-            new MenuPage(lang('logout_logout'), LogoutPage::class, 'fa fa-sign-out fa-fw'),
-        ];
+        $now = (new DateTime('now'))->format('U');
+
+        $menu = [];
+        $menu[] = new MenuPage('Week 1', WeekPage::class, null, [1]);
+        $menu[] = new MenuPage('Week 2', WeekPage::class, null, [2]);
+
+
+        if (dateHasPassed(2017, 3, 27)) {
+            $menu[] = new MenuPage('Week 3', WeekPage::class, null, [3]);
+        }
+        if (dateHasPassed(2017, 4, 3)) {
+            $menu[] = new MenuPage('Week 4', WeekPage::class, null, [4]);
+        }
+
+        return $menu;
     }
 
     function getListItemHtml($title, $link, $icon) {

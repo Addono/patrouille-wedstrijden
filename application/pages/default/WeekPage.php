@@ -4,7 +4,7 @@
  * @author Adriaan Knapen <a.d.knapen@protonmail.com>
  * @date 7-3-2017
  */
-abstract class WeekPage extends PageFrame
+class WeekPage extends PageFrame
 {
     /** @var $week */
     protected $week;
@@ -36,7 +36,7 @@ abstract class WeekPage extends PageFrame
      */
     public function beforeView()
     {
-        $week = $this->week;
+        $week = $this->params['subpage'];
         $this->setData('week', $week);
 
         $data = $this->ci->Rating->getWeek($week);

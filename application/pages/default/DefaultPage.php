@@ -16,11 +16,6 @@ class DefaultPage extends PageFrame
         ];
     }
 
-    public function isVisible()
-    {
-        return true;
-    }
-
     public function hasAccess()
     {
         return true;
