@@ -45,6 +45,9 @@ foreach ($data as $d) {
             <p class="text-divider"></p>
             <div class="content">
                 <div class="input-group form-group label-floating center-block">
+                    <?php if (empty($data)) { ?>
+                        <h4 class="text-center">Sorry, maar deze week is nog niet beschikbaar.</h4>
+                    <?php } else { ?>
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -104,6 +107,7 @@ foreach ($data as $d) {
                     </table>
                 </div>
             </div>
+            <?php } ?>
         </div>
     </div>
 </div>
