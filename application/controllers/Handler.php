@@ -45,7 +45,6 @@ class Handler extends CI_Controller {
             'language',
             'tables',
             'login_state',
-            'pw',
         ]);
         $this->load->model([
             'ModelFrame', // Ensure to load model frame first, since other models might depend on it.
