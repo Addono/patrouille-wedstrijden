@@ -31,6 +31,8 @@ class DefaultPage extends PageFrame
      */
     public function beforeView()
     {
+        $sum = $this->ci->Rating->getSum();
+        $this->setData('sum', $sum);
     }
 
     /**
@@ -40,7 +42,9 @@ class DefaultPage extends PageFrame
      */
     protected function getModels()
     {
-        return [];
+        return [
+            Rating::class,
+        ];
     }
 
     /**

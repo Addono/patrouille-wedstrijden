@@ -18,7 +18,7 @@ class Rating extends ModelFrame
     const FIELD_AREA = 'area';
     const FIELD_WEEK = 'week';
     const FIELD_FACTOR = 'score_factor';
-    const FIELD_HERTEN = 'score_herten';
+    const FIELD_HERTEN = 'herten';
     const FIELD_EKSTERS = 'eksters';
     const FIELD_KEMPHANEN = 'kemphanen';
     const FIELD_UILEN = 'uilen';
@@ -42,6 +42,34 @@ class Rating extends ModelFrame
                     self::FIELD_FACTOR => $factor,
                 ]
             );
+    }
+
+    public function getSum() {
+        $query = $this->db
+            ->get(self::name())
+            ->result_array();
+
+        // Define the result array to store the sum in.
+        $res = [
+            self::FIELD_HERTEN => 0,
+            self::FIELD_EKSTERS => 0,
+            self::FIELD_KEMPHANEN => 0,
+            self::FIELD_UILEN => 0.
+        ];
+
+        // Add each row each group to the result.
+        foreach ($query as $row) {
+            foreach ($res as $group => $score) {
+                if (is_numeric($row[$group])) {
+                    $res[$group] += $row[self::FIELD_FACTOR] * $row[$group];
+                }
+            }
+        }
+
+        // Sort the results
+        arsort($res);
+
+        return $res;
     }
 
     public function v1() {
